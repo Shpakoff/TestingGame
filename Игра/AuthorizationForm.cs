@@ -26,42 +26,7 @@ namespace Игра
                 music.player.controls.play();
             }
             InitializeComponent();
-        }
-
-        private void AuthorizationForm_Load(object sender, EventArgs e)
-        {
-            Region = new Region(
-                RoundedRect(
-                    new Rectangle(0, 0, Width, Height)
-                    , 30
-                )
-            );
-        }
-        public static GraphicsPath RoundedRect(Rectangle baseRect, int radius)
-        {
-            var diameter = radius * 2;
-            var sz = new Size(diameter, diameter);
-            var arc = new Rectangle(baseRect.Location, sz);
-            var path = new GraphicsPath();
-
-            // Верхний левый угол
-            path.AddArc(arc, 180, 90);
-
-            // Верхний правый угол
-            arc.X = baseRect.Right - diameter;
-            path.AddArc(arc, 270, 90);
-
-            // Нижний правый угол
-            arc.Y = baseRect.Bottom - diameter;
-            path.AddArc(arc, 0, 90);
-
-            // Нижний левый угол
-            arc.X = baseRect.Left;
-            path.AddArc(arc, 90, 90);
-
-            path.CloseFigure();
-            return path;
-        }
+        }   
         //Закрытие формы
         private void button1_Click(object sender, EventArgs e)
         {
@@ -123,17 +88,19 @@ namespace Игра
         private void Label2_MouseEnter(object sender, EventArgs e)
         {
             Cursor = Cursors.Hand;
+            label2.ForeColor = Color.FromArgb(104, 78, 222);
         }
 
         private void Label2_MouseLeave(object sender, EventArgs e)
         {
             Cursor = Cursors.Default;
+            label2.ForeColor = Color.FromArgb(74, 20, 140);
         }
         private void Label2_Click(object sender, EventArgs e)
         {
-            Reg f = new Reg();
+            RegistrationForm registrationForm = new RegistrationForm();
             Hide();
-            f.Show();
+            registrationForm.Show();
         }
     }
 }
