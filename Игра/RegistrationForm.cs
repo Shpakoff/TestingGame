@@ -79,10 +79,10 @@ namespace Игра
                 {
                     MessageBox.Show(ex.Message, "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                Aut f = new Aut();
-                this.Hide();
-                f.Show();
+              
+                var authorizationForm = new AuthorizationForm();
+                Hide();
+                authorizationForm.Show();
             }
             else { MessageBox.Show("Неверное подтверждение пароля!", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
         }

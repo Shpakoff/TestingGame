@@ -69,9 +69,9 @@ namespace Игра
                     con.Close();
                     Data2.Login = bunifuMetroTextbox1.Text;
                     Data3.Password = bunifuMetroTextbox2.Text;
-                    Menu f = new Menu();
+                    var menuForm = new MenuForm();
                     Hide();
-                    f.Show();
+                    menuForm.Show();
                 }
                 else
                 {
