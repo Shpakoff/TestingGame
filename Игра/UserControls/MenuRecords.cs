@@ -13,7 +13,8 @@ namespace Игра.UserControls
 {
     public partial class MenuRecords : UserControl
     {
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Game.accdb");
+        readonly OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Game.accdb");
+
         public MenuRecords()
         {
             InitializeComponent();
@@ -41,7 +42,7 @@ namespace Игра.UserControls
                 OleDbDataReader thisReader1 = thisCommand2.ExecuteReader();
                 while (thisReader1.Read())
                 {
-                    bunifuCustomDataGrid1.Rows.Add(thisReader1["Имя"].ToString(), thisReader1["КоличествоБаллов"]);
+                    bunifuCustomDataGrid2.Rows.Add(thisReader1["Имя"].ToString(), thisReader1["КоличествоБаллов"]);
                 }
                 thisReader1.Close();
             }

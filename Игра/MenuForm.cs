@@ -18,8 +18,8 @@ namespace Игра
             menuWeb1.BringToFront();
 
         }
-        Image image1 = Image.FromFile("images/icons8-уменьшить-64.png");
-        Image image2 = Image.FromFile("images/icons8-расширить-64.png");
+        readonly Image image1 = Image.FromFile("images/icons8-уменьшить-64.png");
+        readonly Image image2 = Image.FromFile("images/icons8-расширить-64.png");
         private void Button1_Click(object sender, EventArgs e)
         {
 
@@ -68,6 +68,16 @@ namespace Игра
                 button7.BackgroundImage = image2;
                 WindowState = FormWindowState.Normal;
             }            
-        }     
+        }
+
+        private void PictureBox1_MouseEnter(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Hand;
+        }
+
+        private void PictureBox1_MouseLeave(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
+        }
     }
 }

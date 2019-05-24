@@ -42,13 +42,13 @@
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.button7 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panelControl = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.menuRecords1 = new Игра.UserControls.MenuRecords();
             this.menuWeb1 = new Игра.UserControls.MenuWeb();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
-            this.panelControl.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -139,6 +139,8 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.PictureBox1_Click);
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.PictureBox1_MouseEnter);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.PictureBox1_MouseLeave);
             // 
             // panel2
             // 
@@ -200,6 +202,7 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.button5);
             this.panel3.Controls.Add(this.button7);
             this.panel3.Controls.Add(this.button6);
@@ -209,15 +212,15 @@
             this.panel3.Size = new System.Drawing.Size(801, 36);
             this.panel3.TabIndex = 4;
             // 
-            // panelControl
+            // panel4
             // 
-            this.panelControl.Controls.Add(this.menuRecords1);
-            this.panelControl.Controls.Add(this.menuWeb1);
-            this.panelControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl.Location = new System.Drawing.Point(172, 57);
-            this.panelControl.Name = "panelControl";
-            this.panelControl.Size = new System.Drawing.Size(801, 462);
-            this.panelControl.TabIndex = 5;
+            this.panel4.Controls.Add(this.menuRecords1);
+            this.panel4.Controls.Add(this.menuWeb1);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(172, 57);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(801, 462);
+            this.panel4.TabIndex = 5;
             // 
             // menuRecords1
             // 
@@ -240,7 +243,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(973, 519);
-            this.Controls.Add(this.panelControl);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -250,7 +253,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
-            this.panelControl.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -269,7 +272,7 @@
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panelControl;
+        private System.Windows.Forms.Panel panel4;
         private UserControls.MenuWeb menuWeb1;
         private UserControls.MenuRecords menuRecords1;
     }
