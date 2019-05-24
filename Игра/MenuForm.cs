@@ -15,9 +15,17 @@ namespace Игра
         public MenuForm()
         {
             InitializeComponent();
+            menuWeb1.BringToFront();
+
+        }
+        Image image1 = Image.FromFile("images/icons8-уменьшить-64.png");
+        Image image2 = Image.FromFile("images/icons8-расширить-64.png");
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
 
         }
@@ -25,6 +33,12 @@ namespace Игра
         private void Button3_Click(object sender, EventArgs e)
         {
 
+        }
+        
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            menuRecords1.BringToFront();
         }
 
         private void Button5_Click(object sender, EventArgs e)
@@ -36,5 +50,24 @@ namespace Игра
         {
             WindowState = FormWindowState.Minimized;
         }
+
+        private void PictureBox1_Click(object sender, EventArgs e)
+        {
+            menuWeb1.BringToFront();
+        }
+
+        private void Button7_Click(object sender, EventArgs e)
+        {           
+            if(WindowState != FormWindowState.Maximized)
+            {
+                button7.BackgroundImage = image1;
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                button7.BackgroundImage = image2;
+                WindowState = FormWindowState.Normal;
+            }            
+        }     
     }
 }

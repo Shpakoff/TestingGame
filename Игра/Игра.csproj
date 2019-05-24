@@ -143,6 +143,18 @@
     <Compile Include="Theory.Designer.cs">
       <DependentUpon>Theory.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\MenuRecords.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MenuRecords.Designer.cs">
+      <DependentUpon>MenuRecords.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MenuWeb.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MenuWeb.Designer.cs">
+      <DependentUpon>MenuWeb.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddTheory.resx">
       <DependentUpon>AddTheory.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +206,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Theory.resx">
       <DependentUpon>Theory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MenuRecords.resx">
+      <DependentUpon>MenuRecords.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MenuWeb.resx">
+      <DependentUpon>MenuWeb.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="GameDataSet.xsc">
       <DependentUpon>GameDataSet.xsd</DependentUpon>
