@@ -43,8 +43,8 @@
             this.button7 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.menuRecords1 = new Игра.UserControls.MenuRecords();
             this.menuWeb1 = new Игра.UserControls.MenuWeb();
+            this.menuRecords1 = new Игра.UserControls.MenuRecords();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -222,21 +222,23 @@
             this.panel4.Size = new System.Drawing.Size(801, 462);
             this.panel4.TabIndex = 5;
             // 
-            // menuRecords1
-            // 
-            this.menuRecords1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menuRecords1.Location = new System.Drawing.Point(0, 0);
-            this.menuRecords1.Name = "menuRecords1";
-            this.menuRecords1.Size = new System.Drawing.Size(801, 462);
-            this.menuRecords1.TabIndex = 1;
-            // 
             // menuWeb1
             // 
+            this.menuWeb1.AutoSize = true;
             this.menuWeb1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.menuWeb1.Location = new System.Drawing.Point(0, 0);
             this.menuWeb1.Name = "menuWeb1";
-            this.menuWeb1.Size = new System.Drawing.Size(801, 462);
+            this.menuWeb1.Size = new System.Drawing.Size(0, 0);
             this.menuWeb1.TabIndex = 0;
+            // 
+            // menuRecords1
+            // 
+            this.menuRecords1.AutoSize = true;
+            this.menuRecords1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuRecords1.Location = new System.Drawing.Point(80, -30);
+            this.menuRecords1.Name = "menuRecords1";          
+            this.menuRecords1.Size = new System.Drawing.Size(0, 0);
+            this.menuRecords1.TabIndex = 1;
             // 
             // MenuForm
             // 
@@ -254,6 +256,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }

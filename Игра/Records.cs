@@ -13,7 +13,7 @@ namespace Игра
 {
     public partial class Records : Form
     {
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Game.accdb");      
+        readonly OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Game.accdb");      
         public Records()
         {
             InitializeComponent();
@@ -50,7 +50,7 @@ namespace Игра
             dataGridView2.Sort(dataGridView2.Columns[1], ListSortDirection.Descending);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             Menu f = new Menu();
             this.Hide();

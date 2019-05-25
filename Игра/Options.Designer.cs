@@ -66,7 +66,7 @@
             this.trackBar1.TabIndex = 1;
             this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.trackBar1.Value = 100;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            this.trackBar1.Scroll += new System.EventHandler(this.TrackBar1_Scroll);
             // 
             // label2
             // 
@@ -100,7 +100,7 @@
             this.trackBar3.TabIndex = 6;
             this.trackBar3.TickStyle = System.Windows.Forms.TickStyle.TopLeft;
             this.trackBar3.Value = 100;
-            this.trackBar3.Scroll += new System.EventHandler(this.trackBar3_Scroll);
+            this.trackBar3.Scroll += new System.EventHandler(this.TrackBar3_Scroll);
             // 
             // label6
             // 
@@ -197,7 +197,7 @@
             this.button2.TabIndex = 17;
             this.button2.Text = "\r\n";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // label11
             // 
@@ -233,7 +233,7 @@
             this.button3.TabIndex = 21;
             this.button3.Text = "Изменить";
             this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // button4
             // 
@@ -247,7 +247,7 @@
             this.button4.Size = new System.Drawing.Size(33, 27);
             this.button4.TabIndex = 22;
             this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // button1
             // 
@@ -261,7 +261,7 @@
             this.button1.Size = new System.Drawing.Size(34, 28);
             this.button1.TabIndex = 23;
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // button5
             // 
@@ -275,7 +275,7 @@
             this.button5.TabIndex = 24;
             this.button5.Text = "загрузить";
             this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.Click += new System.EventHandler(this.Button5_Click);
             // 
             // groupBox1
             // 

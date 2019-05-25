@@ -13,7 +13,7 @@ namespace Игра
 {
     public partial class Options : Form
     {
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Game.accdb");
+        private readonly OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|bin/Debug/Game.accdb");
         public Options()
         {
             
@@ -27,14 +27,14 @@ namespace Игра
             label12.Text = Convert.ToString(trackBar3.Value);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             Menu f = new Menu();
             this.Hide();
             f.Show(); 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBox1.Text))
             {
@@ -87,7 +87,7 @@ namespace Игра
             else { MessageBox.Show("Неверное подтверждение пароля!", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Button4_Click(object sender, EventArgs e)
         {
             if (music.player.settings.volume != 0)
             {
@@ -107,7 +107,7 @@ namespace Игра
             }       
         }
 
-        private void trackBar3_Scroll(object sender, EventArgs e)
+        private void TrackBar3_Scroll(object sender, EventArgs e)
         { label12.Text = Convert.ToString(trackBar3.Value);
           music.player.settings.volume = trackBar3.Value;
            if (music.player.settings.volume == 0)
@@ -125,7 +125,7 @@ namespace Игра
             
         }
 
-        private void trackBar1_Scroll(object sender, EventArgs e)
+        private void TrackBar1_Scroll(object sender, EventArgs e)
         {
             label11.Text = Convert.ToString(trackBar1.Value);
             sound.player.settings.volume = trackBar1.Value;
@@ -143,7 +143,7 @@ namespace Игра
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             if (sound.player.settings.volume != 0)
             {
@@ -160,17 +160,19 @@ namespace Игра
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void Button5_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFile1 = new OpenFileDialog();
-            openFile1.DefaultExt = "*.mp3";
-            openFile1.Filter = "MP3 Files|*.mp3";
-            if (openFile1.ShowDialog() == System.Windows.Forms.DialogResult.OK &&
-               openFile1.FileName.Length > 0)
+            using (OpenFileDialog openFile1 = new OpenFileDialog())
             {
-                music.player.URL = (openFile1.FileName);
-                music.player.controls.play();
-                
+                openFile1.DefaultExt = "*.mp3";
+                openFile1.Filter = "MP3 Files|*.mp3";
+                if (openFile1.ShowDialog() == System.Windows.Forms.DialogResult.OK &&
+                   openFile1.FileName.Length > 0)
+                {
+                    music.player.URL = (openFile1.FileName);
+                    music.player.controls.play();
+
+                }
             }
         }
 
