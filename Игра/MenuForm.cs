@@ -15,6 +15,8 @@ namespace Игра
         public MenuForm()
         {
             InitializeComponent();
+            menuWeb1.Dock = DockStyle.Fill;
+            menuRecords1.Dock = DockStyle.Fill;
             menuWeb1.BringToFront();
 
         }
@@ -37,7 +39,7 @@ namespace Игра
         
 
         private void Button4_Click(object sender, EventArgs e)
-        {
+        {          
             menuRecords1.BringToFront();
         }
 

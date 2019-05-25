@@ -22,13 +22,18 @@ namespace Игра.UserControls
         private void MenuRecords_Load(object sender, EventArgs e)
         {
             LoadInfo();
-        }       
-        public string Path = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Game.accdb";
+        }
+        private string Path = null;
+        public string PathString
+        {
+            get { return Path; }
+            set { Path = value; }
+        }
         private void LoadInfo()
         {
-            if(Path != null)
+            if (Path != null)
             {
-                OleDbConnection con = new OleDbConnection(Path);
+                OleDbConnection con = new OleDbConnection(Path.ToString());
                 con.Open();
                 OleDbCommand thisCommand1 = con.CreateCommand();
 
@@ -57,7 +62,6 @@ namespace Игра.UserControls
                 bunifuCustomDataGrid1.Sort(bunifuCustomDataGrid1.Columns[1], ListSortDirection.Descending);
                 bunifuCustomDataGrid2.Sort(bunifuCustomDataGrid2.Columns[1], ListSortDirection.Descending);
             }
-            
         }
     }
 }
