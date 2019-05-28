@@ -47,6 +47,7 @@
             this.menuSettings1 = new Игра.MenuSettings();
             this.menuRecords1 = new Игра.UserControls.MenuRecords();
             this.menuWeb1 = new Игра.UserControls.MenuWeb();
+            this.menuTheory1 = new Игра.MenuTheory();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -232,6 +233,7 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.menuTheory1);
             this.panel4.Controls.Add(this.menuSettings1);
             this.panel4.Controls.Add(this.menuRecords1);
             this.panel4.Controls.Add(this.menuWeb1);
@@ -268,6 +270,16 @@
             this.menuWeb1.Name = "menuWeb1";
             this.menuWeb1.Size = new System.Drawing.Size(801, 462);
             this.menuWeb1.TabIndex = 0;
+            // 
+            // menuTheory1
+            // 
+            this.menuTheory1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(78)))), ((int)(((byte)(222)))));
+            this.menuTheory1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuTheory1.Location = new System.Drawing.Point(0, 0);
+            this.menuTheory1.Name = "menuTheory1";
+            this.menuTheory1.Size = new System.Drawing.Size(801, 462);
+            this.menuTheory1.TabIndex = 3;
+            this.menuTheory1.TreeViewAfterSelect += new System.EventHandler(this.MenuTheory1_TreeViewAfterSelect);
             // 
             // MenuForm
             // 
@@ -311,5 +323,6 @@
         private UserControls.MenuRecords menuRecords1;
         private MenuSettings menuSettings1;
         public System.Windows.Forms.PictureBox pictureBox2;
+        private MenuTheory menuTheory1;
     }
 }

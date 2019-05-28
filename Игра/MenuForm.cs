@@ -26,6 +26,8 @@ namespace Игра
         readonly Image image3 = Image.FromFile("images/icons8-средняя-громкость-64.png");
         readonly Image image4 = Image.FromFile("images/icons8-выключить-звук-64.png");
         readonly OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Game.accdb");
+        TreeNode nod;
+        readonly OleDbConnection con1 = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Info.accdb");
         private void Button1_Click(object sender, EventArgs e)
         {
             button7.Visible = false;
@@ -36,6 +38,27 @@ namespace Игра
         {
             button7.Visible = false;
             WindowState = FormWindowState.Normal;
+            menuTheory1.treeView1.Nodes.Clear();
+            con1.Open();
+            DataTable dt = new DataTable();
+            OleDbDataAdapter da = new OleDbDataAdapter("SELECT * FROM Раздел,Главы WHERE Код = КодРаздела", con1);
+            da.Fill(dt);
+            string ssss = "";
+            int n = 1;
+            foreach (DataRow dr in dt.Rows)
+            {
+
+                if (ssss != dr["НазваниеРаздела"].ToString())
+                {
+                    nod = new TreeNode(dr["НазваниеРаздела"].ToString());
+                    ssss = dr["НазваниеРаздела"].ToString();
+                    menuTheory1.treeView1.Nodes.Add(nod);
+                }
+                nod.Nodes.Add(dr["Название"].ToString()).Tag = n;
+                n++;
+            }
+            con1.Close();
+            menuTheory1.BringToFront();
         }
 
         private void Button3_Click(object sender, EventArgs e)
@@ -48,15 +71,14 @@ namespace Игра
             menuSettings1.BringToFront();
         }      
 
-
-
         private void Button4_Click(object sender, EventArgs e)
         {
             button7.Visible = false;
             WindowState = FormWindowState.Normal;
+            menuRecords1.bunifuCustomDataGrid1.Rows.Clear();
+            menuRecords1.bunifuCustomDataGrid2.Rows.Clear();
             con.Open();
             OleDbCommand thisCommand1 = con.CreateCommand();
-
             {
                 thisCommand1.CommandText = "SELECT * FROM Рекорды,Пользователи WHERE КодПользователя = Код AND КодИгры = 1";
                 OleDbDataReader thisReader = thisCommand1.ExecuteReader();
@@ -215,6 +237,22 @@ namespace Игра
                 pictureBox2.BackgroundImage = image3;
                 music.player.settings.volume = 50;
             }
+        }
+        
+        private void MenuTheory1_TreeViewAfterSelect(object sender, EventArgs e)
+        {
+            int NumberI = 0;
+            con1.Open();
+            DataTable dt = new DataTable();
+            OleDbDataAdapter da = new OleDbDataAdapter("select КодГлавы,Путь From Главы ", con1);
+            da.Fill(dt);
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (Convert.ToInt32(dr["КодГлавы"]) == Convert.ToInt32(sender)) { menuTheory1.richTextBox1.LoadFile("docs/" + dr["Путь"].ToString() + ""); }
+                NumberI++;
+            }
+            con1.Close();
         }
     }
 }
