@@ -15,7 +15,7 @@ namespace Игра
 {
     public partial class AuthorizationForm : Form
     {
-        OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Game.accdb");
+        readonly OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Game.accdb");
         public AuthorizationForm()
         {
             Kol.n++;
@@ -28,7 +28,7 @@ namespace Игра
             InitializeComponent();
         }   
         //Закрытие формы
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

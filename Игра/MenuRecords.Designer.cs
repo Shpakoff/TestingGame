@@ -262,12 +262,9 @@
         }
 
         #endregion
-
-        private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
         private GameDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Name1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Point1;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.Panel panel1;
@@ -275,5 +272,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
+        public Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid1;
+        public Bunifu.Framework.UI.BunifuCustomDataGrid bunifuCustomDataGrid2;
     }
 }

@@ -105,6 +105,12 @@
     <Compile Include="MenuForm.Designer.cs">
       <DependentUpon>MenuForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuSettings.Designer.cs">
+      <DependentUpon>MenuSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="News.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuForm.resx">
       <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuSettings.ja-JP.resx">
+      <DependentUpon>MenuSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuSettings.resx">
+      <DependentUpon>MenuSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="News.resx">
       <DependentUpon>News.cs</DependentUpon>

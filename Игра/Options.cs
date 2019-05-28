@@ -18,8 +18,8 @@ namespace Игра
         {
             
             InitializeComponent();
-            textBox1.Text = Data.Name;
-            textBox2.Text = Data2.Login;
+            textBox2.Text = Data.Name;
+            textBox1.Text = Data2.Login;
             textBox3.Text = Data3.Password;
             trackBar1.Value = sound.player.settings.volume;
             trackBar3.Value = music.player.settings.volume; 
