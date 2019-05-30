@@ -39,18 +39,23 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.menuGame11 = new Игра.MenuGame1();
+            this.menuChangeGames1 = new Игра.MenuChangeGames();
+            this.menuTheory1 = new Игра.MenuTheory();
             this.menuSettings1 = new Игра.MenuSettings();
             this.menuRecords1 = new Игра.UserControls.MenuRecords();
             this.menuWeb1 = new Игра.UserControls.MenuWeb();
-            this.menuTheory1 = new Игра.MenuTheory();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
@@ -163,6 +168,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.pictureBox3);
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.button5);
             this.panel3.Controls.Add(this.button7);
@@ -172,6 +178,20 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(801, 36);
             this.panel3.TabIndex = 4;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pictureBox3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pictureBox3.Location = new System.Drawing.Point(82, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(43, 36);
+            this.pictureBox3.TabIndex = 7;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Visible = false;
+            this.pictureBox3.Click += new System.EventHandler(this.PictureBox3_Click);
             // 
             // pictureBox2
             // 
@@ -233,6 +253,8 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.menuGame11);
+            this.panel4.Controls.Add(this.menuChangeGames1);
             this.panel4.Controls.Add(this.menuTheory1);
             this.panel4.Controls.Add(this.menuSettings1);
             this.panel4.Controls.Add(this.menuRecords1);
@@ -242,6 +264,43 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(801, 462);
             this.panel4.TabIndex = 5;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick_1);
+            // 
+            // menuGame11
+            // 
+            this.menuGame11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(78)))), ((int)(((byte)(222)))));
+            this.menuGame11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuGame11.Location = new System.Drawing.Point(0, 0);
+            this.menuGame11.Name = "menuGame11";
+            this.menuGame11.Size = new System.Drawing.Size(801, 462);
+            this.menuGame11.TabIndex = 5;
+            this.menuGame11.CLickOk += new System.EventHandler(this.MenuGame11_CLickOk);
+            this.menuGame11.CLickNext += new System.EventHandler(this.MenuGame11_CLickNext);
+            // 
+            // menuChangeGames1
+            // 
+            this.menuChangeGames1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(78)))), ((int)(((byte)(222)))));
+            this.menuChangeGames1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuChangeGames1.Location = new System.Drawing.Point(0, 0);
+            this.menuChangeGames1.Name = "menuChangeGames1";
+            this.menuChangeGames1.Size = new System.Drawing.Size(801, 462);
+            this.menuChangeGames1.TabIndex = 4;
+            this.menuChangeGames1.ClickFirstGame += new System.EventHandler(this.MenuChangeGames1_ClickFirstGame);
+            this.menuChangeGames1.ClickSecondGame += new System.EventHandler(this.MenuChangeGames1_ClickSecondGame);
+            // 
+            // menuTheory1
+            // 
+            this.menuTheory1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(78)))), ((int)(((byte)(222)))));
+            this.menuTheory1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuTheory1.Location = new System.Drawing.Point(0, 0);
+            this.menuTheory1.Name = "menuTheory1";
+            this.menuTheory1.Size = new System.Drawing.Size(801, 462);
+            this.menuTheory1.TabIndex = 3;
+            this.menuTheory1.TreeViewAfterSelect += new System.EventHandler(this.MenuTheory1_TreeViewAfterSelect);
             // 
             // menuSettings1
             // 
@@ -271,16 +330,6 @@
             this.menuWeb1.Size = new System.Drawing.Size(801, 462);
             this.menuWeb1.TabIndex = 0;
             // 
-            // menuTheory1
-            // 
-            this.menuTheory1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(78)))), ((int)(((byte)(222)))));
-            this.menuTheory1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.menuTheory1.Location = new System.Drawing.Point(0, 0);
-            this.menuTheory1.Name = "menuTheory1";
-            this.menuTheory1.Size = new System.Drawing.Size(801, 462);
-            this.menuTheory1.TabIndex = 3;
-            this.menuTheory1.TreeViewAfterSelect += new System.EventHandler(this.MenuTheory1_TreeViewAfterSelect);
-            // 
             // MenuForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -297,6 +346,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -324,5 +374,9 @@
         private MenuSettings menuSettings1;
         public System.Windows.Forms.PictureBox pictureBox2;
         private MenuTheory menuTheory1;
+        private MenuChangeGames menuChangeGames1;
+        public System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Timer timer1;
+        private MenuGame1 menuGame11;
     }
 }

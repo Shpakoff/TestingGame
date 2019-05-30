@@ -30,12 +30,45 @@ namespace Игра
         readonly OleDbConnection con1 = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=|DataDirectory|\Info.accdb");
         private void Button1_Click(object sender, EventArgs e)
         {
+            menuGame11.bunifuThinButton22.Visible = true;
+            menuGame11.bunifuThinButton21.Visible = false;
+            menuGame11.comboBox1.Visible = true;
+            menuGame11.label1.Visible = true;
+            menuGame11.bunifuCheckbox1.Visible = false;
+            menuGame11.bunifuCheckbox2.Visible = false;
+            menuGame11.bunifuCheckbox3.Visible = false;
+            menuGame11.bunifuCheckbox4.Visible = false;
+            menuGame11.label4.Visible = false;
+            menuGame11.label5.Visible = false;
+            menuGame11.label6.Visible = false;
+            menuGame11.label7.Visible = false;
+            timer1.Enabled = false;
+            menuGame11.label3.Visible = false;
+            pictureBox3.Visible = false;
+
             button7.Visible = false;
             WindowState = FormWindowState.Normal;
+            menuChangeGames1.BringToFront();
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
+            menuGame11.bunifuThinButton22.Visible = true;
+            menuGame11.bunifuThinButton21.Visible = false;
+            menuGame11.comboBox1.Visible = true;
+            menuGame11.label1.Visible = true;
+            menuGame11.bunifuCheckbox1.Visible = false;
+            menuGame11.bunifuCheckbox2.Visible = false;
+            menuGame11.bunifuCheckbox3.Visible = false;
+            menuGame11.bunifuCheckbox4.Visible = false;
+            menuGame11.label4.Visible = false;
+            menuGame11.label5.Visible = false;
+            menuGame11.label6.Visible = false;
+            menuGame11.label7.Visible = false;
+            timer1.Enabled = false;
+            menuGame11.label3.Visible = false;
+            pictureBox3.Visible = false;
+
             button7.Visible = false;
             WindowState = FormWindowState.Normal;
             menuTheory1.treeView1.Nodes.Clear();
@@ -63,6 +96,22 @@ namespace Игра
 
         private void Button3_Click(object sender, EventArgs e)
         {
+            menuGame11.bunifuThinButton22.Visible = true;
+            menuGame11.bunifuThinButton21.Visible = false;
+            menuGame11.comboBox1.Visible = true;
+            menuGame11.label1.Visible = true;
+            menuGame11.bunifuCheckbox1.Visible = false;
+            menuGame11.bunifuCheckbox2.Visible = false;
+            menuGame11.bunifuCheckbox3.Visible = false;
+            menuGame11.bunifuCheckbox4.Visible = false;
+            menuGame11.label4.Visible = false;
+            menuGame11.label5.Visible = false;
+            menuGame11.label6.Visible = false;
+            menuGame11.label7.Visible = false;
+            timer1.Enabled = false;
+            menuGame11.label3.Visible = false;
+            pictureBox3.Visible = false;
+
             button7.Visible = false;
             WindowState = FormWindowState.Normal;
             menuSettings1.bunifuMaterialTextbox1.Text = Data2.Login;
@@ -73,6 +122,23 @@ namespace Игра
 
         private void Button4_Click(object sender, EventArgs e)
         {
+            
+            menuGame11.bunifuThinButton22.Visible = true;
+            menuGame11.bunifuThinButton21.Visible = false;
+            menuGame11.comboBox1.Visible = true;
+            menuGame11.label1.Visible = true;
+            menuGame11.bunifuCheckbox1.Visible = false;
+            menuGame11.bunifuCheckbox2.Visible = false;
+            menuGame11.bunifuCheckbox3.Visible = false;
+            menuGame11.bunifuCheckbox4.Visible = false;
+            menuGame11.label4.Visible = false;
+            menuGame11.label5.Visible = false;
+            menuGame11.label6.Visible = false;
+            menuGame11.label7.Visible = false;
+            timer1.Enabled = false;
+            menuGame11.label3.Visible = false;
+            pictureBox3.Visible = false;
+
             button7.Visible = false;
             WindowState = FormWindowState.Normal;
             menuRecords1.bunifuCustomDataGrid1.Rows.Clear();
@@ -120,6 +186,24 @@ namespace Игра
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
+            menuGame11.bunifuThinButton22.Visible = true;
+            menuGame11.bunifuThinButton21.Visible = false;
+            menuGame11.comboBox1.Visible = true;
+            menuGame11.label1.Visible = true;
+            menuGame11.bunifuCheckbox1.Visible = false;
+            menuGame11.bunifuCheckbox2.Visible = false;
+            menuGame11.bunifuCheckbox3.Visible = false;
+            menuGame11.bunifuCheckbox4.Visible = false;
+            menuGame11.label4.Visible = false;
+            menuGame11.label5.Visible = false;
+            menuGame11.label6.Visible = false;
+            menuGame11.label7.Visible = false;
+            timer1.Enabled = false;
+            menuGame11.label3.Visible = false;
+            pictureBox3.Visible = false;
+
+
+
             button7.Visible = true;
             if (WindowState == FormWindowState.Maximized)
             {
@@ -253,6 +337,274 @@ namespace Игра
                 NumberI++;
             }
             con1.Close();
+        }
+        double ball = 0;
+        int kol = 0;
+        int[] v;
+        int i = 0;        
+        int t=0;
+        string curBall = "";
+        int n = 0;
+        int prov = 0;
+        
+        private void MenuChangeGames1_ClickFirstGame(object sender, EventArgs e)
+        {
+           
+            menuGame11.BringToFront();
+            pictureBox3.Visible = true;
+            menuGame11.label2.MaximumSize = new Size(600, 0);
+            Random rnd = new Random();
+            con.Open();
+            OleDbCommand thisCommand1 = con.CreateCommand();
+            thisCommand1.CommandText = "SELECT COUNT(*) FROM Рекорды WHERE КодИгры = 1";
+            prov = Convert.ToInt32(thisCommand1.ExecuteScalar());
+            thisCommand1.CommandText = "SELECT COUNT(*) FROM Игра1";
+            int id = Convert.ToInt32(thisCommand1.ExecuteScalar());
+            kol = id;
+            v = Enumerable.Range(1, kol).OrderBy(x => rnd.Next()).ToArray();
+            thisCommand1.CommandText = "SELECT КоличествоБаллов FROM Рекорды WHERE КодПользователя = " + Data4.Kod + " AND КодИгры = 1";
+            curBall = Convert.ToString(thisCommand1.ExecuteScalar());
+            if (prov != 0)
+            {
+                thisCommand1.CommandText = "SELECT MAX(КоличествоБаллов) FROM Рекорды WHERE КодИгры = 1";
+                Rec.rec = Convert.ToDouble(thisCommand1.ExecuteScalar());
+            }
+            con.Close();
+        }
+
+        private void MenuChangeGames1_ClickSecondGame(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuGame11_CLickNext(object sender, EventArgs e)
+        {
+            menuGame11.label8.Visible = false;
+            menuGame11.label9.Visible = false;
+            menuGame11.label10.Visible = false;
+            menuGame11.label11.Visible = false;
+            if ((menuGame11.bunifuCheckbox1.Checked && menuGame11.bunifuCheckbox2.Checked && menuGame11.bunifuCheckbox3.Checked == false && menuGame11.bunifuCheckbox4.Checked == false) || (menuGame11.bunifuCheckbox1.Checked && menuGame11.bunifuCheckbox3.Checked && menuGame11.bunifuCheckbox2.Checked == false && menuGame11.bunifuCheckbox4.Checked == false)
+                || (menuGame11.bunifuCheckbox1.Checked && menuGame11.bunifuCheckbox4.Checked && menuGame11.bunifuCheckbox2.Checked == false && menuGame11.bunifuCheckbox3.Checked == false) || (menuGame11.bunifuCheckbox2.Checked && menuGame11.bunifuCheckbox3.Checked && menuGame11.bunifuCheckbox1.Checked == false && menuGame11.bunifuCheckbox4.Checked == false)
+                || (menuGame11.bunifuCheckbox2.Checked && menuGame11.bunifuCheckbox4.Checked && menuGame11.bunifuCheckbox1.Checked == false && menuGame11.bunifuCheckbox3.Checked == false) || (menuGame11.bunifuCheckbox3.Checked && menuGame11.bunifuCheckbox4.Checked && menuGame11.bunifuCheckbox1.Checked == false && menuGame11.bunifuCheckbox2.Checked == false)
+                || (menuGame11.bunifuCheckbox1.Checked && menuGame11.bunifuCheckbox2.Checked == false && menuGame11.bunifuCheckbox3.Checked == false && menuGame11.bunifuCheckbox4.Checked == false)
+                || (menuGame11.bunifuCheckbox2.Checked && menuGame11.bunifuCheckbox1.Checked == false && menuGame11.bunifuCheckbox3.Checked == false && menuGame11.bunifuCheckbox4.Checked == false)
+                || (menuGame11.bunifuCheckbox3.Checked && menuGame11.bunifuCheckbox1.Checked == false && menuGame11.bunifuCheckbox2.Checked == false && menuGame11.bunifuCheckbox4.Checked == false)
+                || (menuGame11.bunifuCheckbox4.Checked && menuGame11.bunifuCheckbox1.Checked == false && menuGame11.bunifuCheckbox2.Checked == false && menuGame11.bunifuCheckbox3.Checked == false))
+            {
+                if (menuGame11.bunifuCheckbox1.Checked && (menuGame11.label8.Text != "")) { ball += Convert.ToInt32(menuGame11.label8.Text); }
+                if (menuGame11.bunifuCheckbox2.Checked && (menuGame11.label9.Text != "")) { ball += Convert.ToInt32(menuGame11.label9.Text); }
+                if (menuGame11.bunifuCheckbox3.Checked && (menuGame11.label10.Text != "")) { ball += Convert.ToInt32(menuGame11.label10.Text); }
+                if (menuGame11.bunifuCheckbox4.Checked && (menuGame11.label11.Text != "")) { ball += Convert.ToInt32(menuGame11.label11.Text); }
+                menuGame11.bunifuCheckbox1.Checked = false; menuGame11.bunifuCheckbox2.Checked = false; menuGame11.bunifuCheckbox3.Checked = false; menuGame11.bunifuCheckbox4.Checked = false;
+                if (i != kol)
+                {
+                    con.Open();
+                    OleDbCommand thisCommand = con.CreateCommand();
+                    thisCommand.CommandText = "SELECT Вопрос, Ответ1, Ответ2, Ответ3, Ответ4, Балл1, Балл2, Балл3, Балл4 FROM Игра1 WHERE Код = " + v[i] + "";
+                    OleDbDataReader thisReader = thisCommand.ExecuteReader();
+                    while (thisReader.Read())
+                    {
+                        menuGame11.label2.Text = thisReader["Вопрос"].ToString();
+                        menuGame11.label4.Text = thisReader["Ответ1"].ToString();
+                        menuGame11.label5.Text = thisReader["Ответ2"].ToString();
+                        menuGame11.label6.Text = thisReader["Ответ3"].ToString();
+                        menuGame11.label7.Text = thisReader["Ответ4"].ToString();
+                        menuGame11.label8.Text = thisReader["Балл1"].ToString();
+                        menuGame11.label9.Text = thisReader["Балл2"].ToString();
+                        menuGame11.label10.Text = thisReader["Балл3"].ToString();
+                        menuGame11.label11.Text = thisReader["Балл4"].ToString();
+                    }
+
+                    i++;
+                    thisReader.Close();
+                    con.Close();
+                }
+                else
+                {
+                    menuGame11.bunifuThinButton22.Visible = true;
+                    menuGame11.bunifuThinButton21.Visible = false;
+                    menuGame11.comboBox1.Visible = true;
+                    menuGame11.label1.Visible = true;
+                    menuGame11.bunifuCheckbox1.Visible = false;
+                    menuGame11.bunifuCheckbox2.Visible = false;
+                    menuGame11.bunifuCheckbox3.Visible = false;
+                    menuGame11.bunifuCheckbox4.Visible = false;
+                    menuGame11.label4.Visible = false;
+                    menuGame11.label5.Visible = false;
+                    menuGame11.label6.Visible = false;
+                    menuGame11.label7.Visible = false;
+                    timer1.Enabled = false;
+                    menuGame11.label3.Visible = false;
+                    menuChangeGames1.BringToFront();
+                    pictureBox3.Visible = false;
+                    if (ball > Rec.rec) { Rec.rec = ball; MessageBox.Show("Счет игры \nВы побили рекорд набрав " + ball + " баллов!\nРекорд: " + Rec.rec + "", "Игра окончена!", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                    else { MessageBox.Show("Счет игры \nВы набрали " + ball + " баллов \nРекорд: " + Rec.rec + "", "Игра окончена!", MessageBoxButtons.OK, MessageBoxIcon.Information); }                   
+                    if (curBall == "")
+                    {
+                        con.Open();
+                        OleDbCommand cmd = con.CreateCommand();
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = "insert into Рекорды(КодПользователя, КодИгры, КоличествоБаллов) values('" + Data4.Kod + "','" + 1 + "','" + ball + "')";
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+                    else
+                    {
+                        if (ball > Convert.ToInt32(curBall))
+                        {
+                            n = Convert.ToInt32(ball);
+                            con.Open();
+                            OleDbCommand cmd = con.CreateCommand();
+                            cmd.CommandType = CommandType.Text;
+                            cmd.CommandText = "UPDATE Рекорды SET КоличествоБаллов = " + n + " WHERE КодПользователя = " + Data4.Kod + " AND КодИгры = 1";
+                            cmd.ExecuteNonQuery();
+                            con.Close();
+                        }
+                    }
+                }
+            }
+            else { MessageBox.Show("Выберите один или два варианта ответа!", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+        }
+
+        private void MenuGame11_CLickOk(object sender, EventArgs e)
+        {
+            switch (menuGame11.comboBox1.Text)
+            {
+                case "Без времени":
+                    break;
+                case "1 мин":
+                    t = 60;
+                    timer1.Enabled = true;                   
+                    menuGame11.label3.Visible = true;
+                    menuGame11.label3.Text = t.ToString() + " сек";
+                    break;
+                case "5 мин":
+                    t = 300;
+                    timer1.Enabled = true;                  
+                    menuGame11.label3.Visible = true;
+                    menuGame11.label3.Text = t.ToString() + " сек";
+                    break;
+                case "10 мин":
+                    t = 600;
+                    timer1.Enabled = true;                   
+                    menuGame11.label3.Visible = true;
+                    menuGame11.label3.Text = t.ToString() + " сек";
+                    break;
+                case "15 мин":
+                    t = 900;
+                    timer1.Enabled = true;                  
+                    menuGame11.label3.Visible = true;
+                    menuGame11.label3.Text = t.ToString() + " сек";
+                    break;
+                case "20 мин":
+                    t = 1200;
+                    timer1.Enabled = true;
+                    menuGame11.label3.Visible = true;
+                    menuGame11.label3.Text = t.ToString() + " сек";
+                    break;
+                default:
+                    MessageBox.Show("Выбирете временной режим");
+                    return;
+
+            }
+            
+            menuGame11.label1.Visible = false;
+            menuGame11.bunifuCheckbox1.Visible = true;
+            menuGame11.bunifuCheckbox2.Visible = true;
+            menuGame11.bunifuCheckbox3.Visible = true;
+            menuGame11.bunifuCheckbox4.Visible = true;
+            menuGame11.label4.Visible = true;
+            menuGame11.label5.Visible = true;
+            menuGame11.label6.Visible = true;
+            menuGame11.label7.Visible = true;
+            con.Open();
+            OleDbCommand thisCommand = con.CreateCommand();
+            thisCommand.CommandText = "SELECT Вопрос, Ответ1, Ответ2, Ответ3, Ответ4 FROM Игра1 WHERE Код = " + v[i] + "";
+            OleDbDataReader thisReader = thisCommand.ExecuteReader();
+            while (thisReader.Read())
+            {
+                menuGame11.label2.Text = thisReader["Вопрос"].ToString();
+                menuGame11.label4.Text = thisReader["Ответ1"].ToString();
+                menuGame11.label5.Text = thisReader["Ответ2"].ToString();
+                menuGame11.label6.Text = thisReader["Ответ3"].ToString();
+                menuGame11.label7.Text = thisReader["Ответ4"].ToString();
+            }
+            i++;
+            thisReader.Close();
+            con.Close();
+            menuGame11.bunifuThinButton22.Visible = false;
+            menuGame11.bunifuThinButton21.Visible = true;
+            menuGame11.comboBox1.Visible = false;
+        }
+       
+        private void PictureBox3_Click(object sender, EventArgs e)
+        {
+            menuGame11.bunifuThinButton22.Visible = true;
+            menuGame11.bunifuThinButton21.Visible = false;
+            menuGame11.comboBox1.Visible = true;
+            menuGame11.label1.Visible = true;
+            menuGame11.bunifuCheckbox1.Visible = false;
+            menuGame11.bunifuCheckbox2.Visible = false;
+            menuGame11.bunifuCheckbox3.Visible = false;
+            menuGame11.bunifuCheckbox4.Visible = false;
+            menuGame11.label4.Visible = false;
+            menuGame11.label5.Visible = false;
+            menuGame11.label6.Visible = false;
+            menuGame11.label7.Visible = false;
+            timer1.Enabled = false;
+            menuGame11.label3.Visible = false;
+            pictureBox3.Visible = false;
+            menuChangeGames1.BringToFront();
+            
+        }
+
+        private void Timer1_Tick_1(object sender, EventArgs e)
+        {
+            t--;
+            menuGame11.label3.Text = t.ToString() + " сек";
+            if (t == 0)
+            {
+                menuGame11.bunifuThinButton22.Visible = true;
+                menuGame11.bunifuThinButton21.Visible = false;
+                menuGame11.comboBox1.Visible = true;
+                menuGame11.label1.Visible = true;
+                menuGame11.bunifuCheckbox1.Visible = false;
+                menuGame11.bunifuCheckbox2.Visible = false;
+                menuGame11.bunifuCheckbox3.Visible = false;
+                menuGame11.bunifuCheckbox4.Visible = false;
+                menuGame11.label4.Visible = false;
+                menuGame11.label5.Visible = false;
+                menuGame11.label6.Visible = false;
+                menuGame11.label7.Visible = false;
+                timer1.Enabled = false;
+                menuGame11.label3.Visible = false;
+                menuChangeGames1.BringToFront();
+                pictureBox3.Visible = false;
+                if (ball > Rec.rec) { Rec.rec = ball; MessageBox.Show("Счет игры \nВы побили рекорд набрав " + ball + " баллов!\nРекорд: " + Rec.rec + "", "Время вышло!", MessageBoxButtons.OK, MessageBoxIcon.Information); }
+                else { MessageBox.Show("Счет игры \nВы набрали " + ball + " баллов \nРекорд: " + Rec.rec + "", "Время вышло!", MessageBoxButtons.OK, MessageBoxIcon.Information); }               
+                if (curBall == "")
+                {
+                    con.Open();
+                    OleDbCommand cmd = con.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "insert into Рекорды(КодПользователя, КодИгры, КоличествоБаллов) values('" + Data4.Kod + "','" + 1 + "','" + ball + "')";
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                else
+                {
+                    if (ball > Convert.ToInt32(curBall))
+                    {
+                        n = Convert.ToInt32(ball);
+                        con.Open();
+                        OleDbCommand cmd = con.CreateCommand();
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = cmd.CommandText = "UPDATE Рекорды SET КоличествоБаллов = " + n + " WHERE КодПользователя = " + Data4.Kod + " AND КодИгры = 1";
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                    }
+                }
+            }
         }
     }
 }

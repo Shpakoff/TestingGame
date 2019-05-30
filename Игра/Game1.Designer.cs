@@ -173,7 +173,7 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Verdana Pro Cond Black", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button3.Location = new System.Drawing.Point(543, 382);
+            this.button3.Location = new System.Drawing.Point(522, 382);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(129, 40);
             this.button3.TabIndex = 10;
