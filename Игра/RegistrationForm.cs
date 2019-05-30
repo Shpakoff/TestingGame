@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Игра
@@ -79,7 +73,7 @@ namespace Игра
                 {
                     MessageBox.Show(ex.Message, "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-              
+
                 var authorizationForm = new AuthorizationForm();
                 Hide();
                 authorizationForm.Show();

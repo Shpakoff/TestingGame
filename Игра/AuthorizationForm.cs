@@ -1,15 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Bunifu.Framework;
 
 namespace Игра
 {
@@ -26,7 +19,7 @@ namespace Игра
                 music.player.controls.play();
             }
             InitializeComponent();
-        }   
+        }
         //Закрытие формы
         private void Button1_Click(object sender, EventArgs e)
         {
@@ -36,7 +29,7 @@ namespace Игра
         private void Button2_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
-        }            
+        }
 
         private void BunifuThinButton21_Click(object sender, EventArgs e)
         {

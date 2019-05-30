@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Игра
@@ -14,7 +7,7 @@ namespace Игра
     {
         public event EventHandler ClickDownload;
 
-        public event EventHandler ClickToChange;   
+        public event EventHandler ClickToChange;
 
         public MenuSettings()
         {
@@ -29,6 +22,6 @@ namespace Игра
         private void BunifuThinButton21_Click(object sender, EventArgs e)
         {
             ClickDownload?.Invoke(this, e);
-        }   
+        }
     }
 }
