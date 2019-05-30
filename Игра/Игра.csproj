@@ -52,52 +52,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddTheory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddTheory.Designer.cs">
-      <DependentUpon>AddTheory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Aut.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Aut.Designer.cs">
-      <DependentUpon>Aut.cs</DependentUpon>
-    </Compile>
     <Compile Include="AuthorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AuthorizationForm.Designer.cs">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Game1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Game1.Designer.cs">
-      <DependentUpon>Game1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Game2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Game2.Designer.cs">
-      <DependentUpon>Game2.cs</DependentUpon>
-    </Compile>
     <Compile Include="GameDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GameDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Games.cs">
-      <SubType>Form</SubType>
+    <Compile Include="MenuChangeGame2.cs">
+      <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Games.Designer.cs">
-      <DependentUpon>Games.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Menu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <Compile Include="MenuChangeGame2.Designer.cs">
+      <DependentUpon>MenuChangeGame2.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuChangeGames.cs">
       <SubType>UserControl</SubType>
@@ -117,6 +87,12 @@
     <Compile Include="MenuGame1.Designer.cs">
       <DependentUpon>MenuGame1.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuGame2.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MenuGame2.Designer.cs">
+      <DependentUpon>MenuGame2.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuSettings.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -129,43 +105,13 @@
     <Compile Include="MenuTheory.Designer.cs">
       <DependentUpon>MenuTheory.cs</DependentUpon>
     </Compile>
-    <Compile Include="News.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="News.Designer.cs">
-      <DependentUpon>News.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Options.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Options.Designer.cs">
-      <DependentUpon>Options.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Records.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Records.Designer.cs">
-      <DependentUpon>Records.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reg.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reg.Designer.cs">
-      <DependentUpon>Reg.cs</DependentUpon>
-    </Compile>
     <Compile Include="RegistrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Theory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Theory.Designer.cs">
-      <DependentUpon>Theory.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuRecords.cs">
       <SubType>UserControl</SubType>
@@ -179,26 +125,11 @@
     <Compile Include="MenuWeb.Designer.cs">
       <DependentUpon>MenuWeb.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AddTheory.resx">
-      <DependentUpon>AddTheory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Aut.resx">
-      <DependentUpon>Aut.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AuthorizationForm.resx">
       <DependentUpon>AuthorizationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Game1.resx">
-      <DependentUpon>Game1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Game2.resx">
-      <DependentUpon>Game2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Games.resx">
-      <DependentUpon>Games.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <EmbeddedResource Include="MenuChangeGame2.resx">
+      <DependentUpon>MenuChangeGame2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuChangeGames.resx">
       <DependentUpon>MenuChangeGames.cs</DependentUpon>
@@ -209,6 +140,9 @@
     <EmbeddedResource Include="MenuGame1.resx">
       <DependentUpon>MenuGame1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MenuGame2.resx">
+      <DependentUpon>MenuGame2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuSettings.ja-JP.resx">
       <DependentUpon>MenuSettings.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,12 +151,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MenuTheory.resx">
       <DependentUpon>MenuTheory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="News.resx">
-      <DependentUpon>News.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Options.resx">
-      <DependentUpon>Options.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -234,17 +162,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Records.resx">
-      <DependentUpon>Records.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reg.resx">
-      <DependentUpon>Reg.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Theory.resx">
-      <DependentUpon>Theory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuRecords.resx">
       <DependentUpon>MenuRecords.cs</DependentUpon>
@@ -277,7 +196,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="bin\Debug\Icon_Debug_256x256.png" />
+    <Folder Include="bin\Debug\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

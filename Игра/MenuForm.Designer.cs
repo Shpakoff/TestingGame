@@ -46,6 +46,8 @@
             this.button6 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.menuGame21 = new Игра.MenuGame2();
+            this.menuChangeGame21 = new Игра.MenuChangeGame2();
             this.menuGame11 = new Игра.MenuGame1();
             this.menuChangeGames1 = new Игра.MenuChangeGames();
             this.menuTheory1 = new Игра.MenuTheory();
@@ -253,6 +255,8 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.menuGame21);
+            this.panel4.Controls.Add(this.menuChangeGame21);
             this.panel4.Controls.Add(this.menuGame11);
             this.panel4.Controls.Add(this.menuChangeGames1);
             this.panel4.Controls.Add(this.menuTheory1);
@@ -269,6 +273,27 @@
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.Timer1_Tick_1);
+            // 
+            // menuGame21
+            // 
+            this.menuGame21.AutoSize = true;
+            this.menuGame21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(78)))), ((int)(((byte)(222)))));
+            this.menuGame21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuGame21.Location = new System.Drawing.Point(0, 0);
+            this.menuGame21.Name = "menuGame21";
+            this.menuGame21.Size = new System.Drawing.Size(801, 462);
+            this.menuGame21.TabIndex = 7;
+            this.menuGame21.Click_Next_Game2 += new System.EventHandler(this.MenuGame21_Click_Next_Game2);
+            // 
+            // menuChangeGame21
+            // 
+            this.menuChangeGame21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(104)))), ((int)(((byte)(78)))), ((int)(((byte)(222)))));
+            this.menuChangeGame21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.menuChangeGame21.Location = new System.Drawing.Point(0, 0);
+            this.menuChangeGame21.Name = "menuChangeGame21";
+            this.menuChangeGame21.Size = new System.Drawing.Size(801, 462);
+            this.menuChangeGame21.TabIndex = 6;
+            this.menuChangeGame21.Click_Ok_ChangeGame2 += new System.EventHandler(this.MenuChangeGame21_Click_Ok_ChangeGame2);
             // 
             // menuGame11
             // 
@@ -378,5 +403,7 @@
         public System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Timer timer1;
         private MenuGame1 menuGame11;
+        private MenuChangeGame2 menuChangeGame21;
+        private MenuGame2 menuGame21;
     }
 }
